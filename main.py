@@ -5,6 +5,8 @@ class Vilage:
         self.population = population
         self.area_building = area_bulding
 
+    def __str__(self):
+        return f"Village name: {self.name} \nLocation: {self.location} \nPopulation: {self.population}"
 
 class Building:
 
@@ -73,3 +75,7 @@ class ChristmasTree(Item):
 
 class Toy(Item):
     pass
+
+
+Santa = Vilage("Santa","Nowhere",250,12)
+print(Santa)
