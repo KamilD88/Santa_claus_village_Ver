@@ -5,12 +5,13 @@ class Vilage:
         self.population = population
         self.area_building = area_bulding
 
+
 class Building:
+
     def __init__(self, name, population, area):
         self.name = name
         self.population = population
         self.area = area
-
 
 
 class Workshop(Building):
@@ -33,33 +34,42 @@ class Resident:
         self.height = height
         self.weight = weight
 
+
 class Human(Resident):
-    ...
+    pass
 
 
 class Elf(Resident):
-    ...
+    pass
+
 
 class MagicElf(Elf):
-    ...
+    pass
+
 
 class Reindeer(Resident):
-    ...
+    pass
+
 
 class SantaReindeer(Reindeer):
-    ...
+    pass
+
 
 class Item():
-    ...
+    pass
+
 
 class Sledge(Item):
-    ...
+    pass
+
 
 class SantaBag(Item):
-    ...
+    pass
+
 
 class ChristmasTree(Item):
     pass
+
 
 class Toy(Item):
     pass
