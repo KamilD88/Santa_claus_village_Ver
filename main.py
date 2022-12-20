@@ -59,7 +59,7 @@ class SantaBag(Item):
     ...
 
 class ChristmasTree(Item):
-    ...
+    pass
 
 class Toy(Item):
     pass
