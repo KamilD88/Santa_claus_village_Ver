@@ -1,15 +1,23 @@
-class Vilage:
+class Village:
     def __init__(self, name, location, population, area_bulding):
         self.name = name
         self.location = location
         self.population = population
         self.area_building = area_bulding
+        self.max_population = 999
 
     def __str__(self):
         return f"Village name: {self.name} \nLocation: {self.location} \nPopulation: {self.population}"
 
-class Building:
 
+    def add_population(self):
+        if self.population < self.max_population:
+            self.population =+ 1
+        else:
+            print (f"Max population is {self.max_population}. "
+                   f"You can not add more residents to village {self.name}")
+
+class Building:
     def __init__(self, name, population, area):
         self.name = name
         self.population = population
@@ -77,5 +85,5 @@ class Toy(Item):
     pass
 
 
-Santa = Vilage("Santa","Nowhere",250,12)
+Santa = Village("Santa","Nowhere",250,12)
 print(Santa)
