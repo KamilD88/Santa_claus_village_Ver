@@ -34,10 +34,8 @@ class Workshop(Building):
 
 
 class House(Building):
-    def __init__(self, bed_capacity, residents, name, population, area):
-        super().__init__(name, population, area)
-        self.bed_capacity = bed_capacity
-        self.residents = residents
+    def __init__(self, name, capacity, residents, b):
+        super().__init__(name, capacity, residents)
 
 
 class Resident:
@@ -49,7 +47,7 @@ class Resident:
         Village.add_population(self)
 
 
-class Human(Resident):
+class Santa(Resident):
     pass
 
 
@@ -89,5 +87,5 @@ class Toy(Item):
     pass
 
 
-Santa = Village("Santa", "Nowhere", 9992)
+santa = Village("Santa", "Nowhere", 9992)
 print(Santa)
