@@ -51,13 +51,13 @@ class Resident:
         self.age = age
         self.height = height
         self.weight = weight
-        Village.add_population(int(1))
+        Village.add_population()
 
 
 class Santa(Resident):
-    def __int__(self, name, age, height, weight, special_skills=[]):
+    def __int__(self, name, age, height, weight, special_skill):
         super().__init__(name, age, height, weight)
-        self.special_skill = special_skills
+        self.special_skill = special_skill
         self.weight = weight * 1.5
 
     def distribution_of_presents(self):
@@ -69,37 +69,62 @@ class Santa(Resident):
 
 
 class Elf(Resident):
-    pass
+     def __init__(self, manufactured, name, age, height, weight):
+         super().__init__(name, age, height, weight)
+         self.manufactured = manufactured
 
 
 
 class Reindeer(Resident):
-    pass
+    def __init__(self, special_skill, run_speed, name, age, height, weight):
+        super().__init__(name, age, height, weight)
+        self.special_skill = special_skill
+        self.run_speed = run_speed
 
-
-class SantaReindeer(Reindeer):
-    pass
-
+    def fly(self):
+        move_in_air = self.run_speed * 5
+        return move_in_air
 
 class Item:
-    pass
+    def __init__(self, size, weight):
+        self.size = size
+        self.weight = weight
 
 
 class Sledge(Item):
-    pass
+    def __init__(self, amount_of_magic_dust, amount_of_reindeer, size, weight):
+        super().__init__(size, weight)
+        self.amount_of_magic_dust = amount_of_magic_dust
+        self.amount_of_reindeer = amount_of_reindeer
 
-
+    def fly(self):
+        move_speed = self.amount_of_reindeer * Reindeer.fly()
+        self.amount_of_magic_dust =- 1
+        return move_speed
 class SantaBag(Item):
-    pass
-
+    def __init__(self, amount_of_presents, size, weight):
+        super().__init__(size, weight)
+        self.amount_of_presents = amount_of_presents
 
 class ChristmasTree(Item):
-    pass
+    def __init__(self, number_of_lights, number_of_ornaments,state_of_lights):
+        self.number_of_lights = number_of_lights
+        self.number_of_ornaments = number_of_ornaments
+        self.state_of_lights = state_of_lights
+
+    def turn_on_lights(self):
+        self.state_of_lights = 1
+        return self.state_of_lights
+
+    def turn_off_lights(self):
+        self.state_of_lights = 0
+        return self.state_of_lights
 
 
-class Toy(Item):
-    pass
-
+class Toy(Item)
+    def __init__(self, multimedia, destination):
+        self.multimedia = multimedia
+        self.destination = destination
 
 santa = Village("Santa", "Nowhere", 9992)
 print(Santa)
