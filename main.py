@@ -51,7 +51,7 @@ class Resident:
         self.age = age
         self.height = height
         self.weight = weight
-        self.add = Village.add_population(self)
+        Village.add_population(int(1))
 
 
 class Santa(Resident):
@@ -61,10 +61,11 @@ class Santa(Resident):
         self.weight = weight * 1.5
 
     def distribution_of_presents(self):
-        time = 8
+        time_in_hours = 24
         number_of_laps_of_the_earth = 4
         number_of_presents = 7700000000
-        return f"Santa distributed {}"
+        return f"Santa distributed {number_of_presents} presents in {time_in_hours} hours," \
+               f"make {number_of_laps_of_the_earth} laps around the world"
 
 
 class Elf(Resident):
