@@ -107,7 +107,8 @@ class SantaBag(Item):
         self.amount_of_presents = amount_of_presents
 
 class ChristmasTree(Item):
-    def __init__(self, number_of_lights, number_of_ornaments,state_of_lights):
+    def __init__(self, number_of_lights, number_of_ornaments, state_of_lights, size, weight):
+        super().__init__(size, weight)
         self.number_of_lights = number_of_lights
         self.number_of_ornaments = number_of_ornaments
         self.state_of_lights = state_of_lights
@@ -121,8 +122,9 @@ class ChristmasTree(Item):
         return self.state_of_lights
 
 
-class Toy(Item)
-    def __init__(self, multimedia, destination):
+class Toy(Item):
+    def __init__(self, multimedia, destination, size, weight):
+        super().__init__(size, weight)
         self.multimedia = multimedia
         self.destination = destination
 
